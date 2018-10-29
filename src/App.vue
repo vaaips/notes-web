@@ -18,7 +18,7 @@
   src: url("./assets/fonts/Raleway-Medium.ttf") format("woff2");
 }
 
-body { margin: 0 }
+body, h1, h2, h3, h4, h5, h6, p { margin: 0 }
 
 #app {
   h1, h2, h3, h4, h5, h6, p {
