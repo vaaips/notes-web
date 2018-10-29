@@ -4,7 +4,19 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 700;
+  src: url("./assets/fonts/Raleway-Bold.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-weight: 500;
+  src: url("./assets/fonts/Raleway-Medium.ttf") format("woff2");
+}
 #app {
   
 }
