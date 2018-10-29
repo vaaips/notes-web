@@ -17,7 +17,12 @@
   font-weight: 500;
   src: url("./assets/fonts/Raleway-Medium.ttf") format("woff2");
 }
+
+body { margin: 0 }
+
 #app {
-  
+  h1, h2, h3, h4, h5, h6, p {
+    font-family: Raleway;
+  }
 }
 </style>
