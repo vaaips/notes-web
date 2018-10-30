@@ -7,7 +7,7 @@
       <div class="notes">
         <div class="notes-wrapper">
           <ul>
-            <li v-for="(note, index) of notes" @click="activeNote = index" :style="[activeNote == index ? {'background': '#efefef'} : {'background': '#fff'}]">
+            <li v-for="(note, index) of notes" @click="showNote(note, index)" :style="[activeNote == index ? {'background': '#efefef'} : {'background': '#fff'}]">
               <h4 class="note-title">{{ note.text }}</h4>
               <p class="time">{{ moment(note.date).fromNow() }}</p>
             </li>
@@ -21,7 +21,7 @@
           <h4 class="create-new-text">Create New Note</h4>
         </div>
         <div class="input-note effect" v-else>
-          <textarea class="text-area"></textarea>
+          <textarea class="text-area" v-model="note.text"></textarea>
         </div>
       </div>
     </div>
@@ -37,13 +37,17 @@ export default {
         {'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
         {'date': 1540709560841, 'text': 'Hello world'}
       ],
+      note: '',
 
       activeNote: undefined
     }
   },
   
   methods: {
-
+    showNote(note, index) {
+      this.activeNote = index
+      this.note = note
+    }
   }
 }
 </script>
