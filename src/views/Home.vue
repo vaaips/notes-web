@@ -16,7 +16,10 @@
         <div class="unallocated-space" @click="activeNote = undefined"></div>
       </div>
       <div class="note">
-        
+        <div class="create-new-note" v-if="activeNote == undefined">
+          <img class="plus-icon" src="../assets/images/plus.png" alt="">
+          <h4 class="create-new-text">Create New Note</h4>
+        </div>
       </div>
     </div>
   </div>
@@ -102,6 +105,22 @@ export default {
       .note {
         background: #efefef;
         width: 70vw;
+
+        .create-new-note {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .plus-icon { height: 68px }
+          
+          .create-new-text {
+            color: #fbc02d;
+            margin-top: 10px;
+            font-size: 18px;
+          }
+        }
       }
     }
   }
