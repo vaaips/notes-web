@@ -7,12 +7,13 @@
       <div class="notes">
         <div class="notes-wrapper">
           <ul>
-            <li v-for="note of notes">
+            <li v-for="(note, index) of notes" @click="activeNote = index" :style="[activeNote == index ? {'background': '#efefef'} : {'background': '#fff'}]">
               <h4 class="note-title">{{ note.text }}</h4>
               <p class="time">{{ moment(note.date).fromNow() }}</p>
             </li>
           </ul>
         </div>
+        <div class="unallocated-space" @click="activeNote = undefined"></div>
       </div>
       <div class="note">
         
@@ -29,7 +30,9 @@ export default {
       notes: [
         {'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
         {'date': 1540709560841, 'text': 'Hello world'}
-      ]
+      ],
+
+      activeNote: undefined
     }
   },
   
@@ -60,6 +63,8 @@ export default {
       .notes {
         width: 30vw;
         border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
 
         .notes-wrapper {
           ul {
@@ -91,6 +96,8 @@ export default {
             }
           }
         }
+
+        .unallocated-space { flex-grow: 1 }
       }
 
       .note {
