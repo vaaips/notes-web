@@ -80,6 +80,8 @@ export default {
         flex-direction: column;
 
         .notes-wrapper {
+          overflow: auto;
+
           ul {
             list-style: none;
             padding: 0;
