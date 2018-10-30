@@ -32,11 +32,14 @@
 </template>
 
 <script>
+import store from 'store'
+
 export default {
   name: 'home',
   data() {
     return {
-      notes: [
+      notes: undefined,
+      localNotes: [
         {'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
         {'date': 1540709560841, 'text': 'Hello world'}
       ],
@@ -51,6 +54,15 @@ export default {
       if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
+    }
+  },
+
+  mounted() {
+    this.notes = store.get('notes')
+    
+    if(this.notes == undefined) {
+      store.set('notes', this.localNotes)
+      this.notes = store.get('notes')
     }
   }
 }
