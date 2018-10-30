@@ -20,6 +20,18 @@
 
 body, h1, h2, h3, h4, h5, h6, p { margin: 0 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #efefef;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: #fbc02d;
+}
+
 #app {
   h1, h2, h3, h4, h5, h6, p {
     font-family: Raleway;
