@@ -37,7 +37,7 @@ export default {
   },
   
   methods: {
-    
+
   }
 }
 </script>
@@ -62,7 +62,6 @@ export default {
 
       .notes {
         width: 30vw;
-        border-right: 1px solid #ddd;
         display: flex;
         flex-direction: column;
 
