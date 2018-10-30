@@ -55,7 +55,7 @@ export default {
 <style lang="scss">
   .home {
     .header {
-      background: #f2b951;
+      background: #fbc02d;
       height: 70px;
       display: flex;
       justify-content: center;
