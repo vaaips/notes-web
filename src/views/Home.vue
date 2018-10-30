@@ -21,7 +21,7 @@
           <h4 class="create-new-text">Create New Note</h4>
         </div>
         <div class="input-note effect" v-else>
-          <textarea class="text-area" v-model="note.text"></textarea>
+          <textarea class="text-area" v-model="note.text" placeholder="Type notes here"></textarea>
         </div>
       </div>
     </div>
