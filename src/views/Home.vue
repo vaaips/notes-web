@@ -92,6 +92,7 @@ export default {
               border-right: none;
               border-left: none;
               padding: 5px 10px;
+              cursor: pointer;
 
               .note-title {
                 font-size: 20px;
