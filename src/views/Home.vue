@@ -48,6 +48,7 @@ export default {
   
   methods: {
     showNote(note, index) {
+      if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
     }
@@ -133,6 +134,7 @@ export default {
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
 
           .plus-icon { height: 68px }
           
