@@ -7,9 +7,9 @@
       <div class="notes">
         <div class="notes-wrapper">
           <ul>
-            <li v-for="item of [1,2,3]">
-              <h4 class="note-title">Hello world!! fdgsdg sgfsddff mo</h4>
-              <p class="time">2 minutes ago</p>
+            <li v-for="note of notes">
+              <h4 class="note-title">{{ note.text }}</h4>
+              <p class="time">{{ moment(note.date).fromNow() }}</p>
             </li>
           </ul>
         </div>
@@ -23,7 +23,19 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  data() {
+    return {
+      notes: [
+        {'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
+        {'date': 1540709560841, 'text': 'Hello world'}
+      ]
+    }
+  },
+  
+  methods: {
+    
+  }
 }
 </script>
 
