@@ -9,7 +9,10 @@
           <ul>
             <li v-for="(note, index) of notes" @click="showNote(note, index)" :style="[activeNote == index ? {'background': '#efefef'} : {'background': '#fff'}]">
               <h4 class="note-title">{{ note.text }}</h4>
-              <p class="time">{{ moment(note.date).fromNow() }}</p>
+              <div>
+                <span class="time">{{ moment(note.date).fromNow() }}</span>
+                <img class="trash" src="../assets/images/trash.png" alt="" v-if="activeNote == index">
+              </div>
             </li>
           </ul>
         </div>
@@ -98,9 +101,19 @@ export default {
                 margin-bottom: 2px;
               }
 
-              .time {
-                font-size: 15px;
-                color: #717171;
+              div {
+                display: flex;
+                align-items: center;
+
+                .time {
+                  font-size: 15px;
+                  color: #717171;
+                }
+
+                .trash {
+                  margin-left: 8px;
+                  height: 15px;
+                }
               }
             }
           }
