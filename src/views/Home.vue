@@ -20,6 +20,9 @@
           <img class="plus-icon" src="../assets/images/plus.png" alt="">
           <h4 class="create-new-text">Create New Note</h4>
         </div>
+        <div class="input-note effect" v-else>
+          <textarea class="text-area"></textarea>
+        </div>
       </div>
     </div>
   </div>
@@ -120,6 +123,43 @@ export default {
             margin-top: 10px;
             font-size: 18px;
           }
+        }
+
+        .input-note {
+          margin: 20px;
+          display: flex;
+          height: 60vh;
+            
+          .text-area {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            resize: none;
+            outline: none;
+            z-index: 1;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: Raleway;
+          }
+        }
+
+        .effect { position: relative }
+        .effect:before, .effect:after {
+          position: absolute;
+          content: "";
+          bottom: 16px;
+          left: 10px;
+          width: 50%;
+          top: 80%;
+          max-width:300px;
+          box-shadow: 0 15px 10px #777;
+          transform: rotate(-3deg);
+        }
+
+        .effect:after {
+          transform: rotate(3deg);
+          right: 10px;
+          left: auto;
         }
       }
     }
