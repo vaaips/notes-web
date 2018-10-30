@@ -146,7 +146,7 @@ export default {
         .input-note {
           margin: 20px;
           display: flex;
-          height: 60vh;
+          height: calc(100vh - 110px);
             
           .text-area {
             width: 100%;
