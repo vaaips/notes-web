@@ -12,7 +12,7 @@
               <h4 class="note-title default" v-if="!note.text">Type some notes!!!</h4>
               <div>
                 <span class="time">{{ moment(note.date).fromNow() }}</span>
-                <img class="trash" src="../assets/images/trash.png" alt="" v-if="activeNote == index">
+                <img class="trash" src="../assets/images/trash.png" @click="deleteNote()" v-if="(activeNote == index) && (_.size(notes) > 1) && (note.text)">
               </div>
             </li>
           </ul>
@@ -85,6 +85,12 @@ export default {
         this.note = this.notes[0]
       }
       this.activeNote = undefined
+    },
+
+    deleteNote() {
+      this.notes.splice(this.activeNote, 1);
+      store.set('notes', this.notes);
+      this.note = this.notes[0]
     }
   },
 
