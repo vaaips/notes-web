@@ -9,6 +9,7 @@
           <ul>
             <li v-for="(note, index) of notes" @click="showNote(note, index)" :style="[activeNote == index ? {'background': '#efefef'} : {'background': '#fff'}]">
               <h4 class="note-title">{{ note.text }}</h4>
+              <h4 class="note-title default" v-if="!note.text">Type some notes!!!</h4>
               <div>
                 <span class="time">{{ moment(note.date).fromNow() }}</span>
                 <img class="trash" src="../assets/images/trash.png" alt="" v-if="activeNote == index">
@@ -146,6 +147,10 @@ export default {
                 text-overflow: ellipsis;
                 margin-bottom: 2px;
                 text-transform: capitalize;
+              }
+
+              .default {
+                color: #757575;
               }
 
               div {
