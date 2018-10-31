@@ -24,7 +24,7 @@
           <h4 class="create-new-text">Create New Note</h4>
         </div>
         <div class="input-note effect" v-else>
-          <textarea class="text-area" v-model="note.text" placeholder="Type notes here"></textarea>
+          <textarea class="text-area" v-model="note.text" placeholder="Type notes here" @input="updateNote()"></textarea>
         </div>
       </div>
     </div>
@@ -33,6 +33,7 @@
 
 <script>
 import store from 'store'
+import uniqid from 'uniqid'
 
 export default {
   name: 'home',
@@ -40,8 +41,8 @@ export default {
     return {
       notes: undefined,
       localNotes: [
-        {'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
-        {'date': 1540709560841, 'text': 'Hello world'}
+        {'id': uniqid(), 'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
+        {'id': uniqid(), 'date': 1540709560841, 'text': 'Hello world'}
       ],
       note: '',
 
@@ -54,6 +55,11 @@ export default {
       if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
+    },
+
+    updateNote() {
+      this.notes.splice(this.activeNote, 1, {id: this.note.id, text: this.note.text, date: this.note.date});
+      store.set('notes', this.notes);
     }
   },
 
