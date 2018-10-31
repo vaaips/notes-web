@@ -24,7 +24,7 @@
           <h4 class="create-new-text">Create New Note</h4>
         </div>
         <div class="input-note effect" v-else>
-          <textarea class="text-area" v-model="note.text" placeholder="Type notes here" @input="updateNote()"></textarea>
+          <textarea class="text-area" id="text-area" v-model="note.text" placeholder="Type notes here" @input="updateNote()" autofocus></textarea>
         </div>
       </div>
     </div>
@@ -34,6 +34,7 @@
 <script>
 import store from 'store'
 import uniqid from 'uniqid'
+import $ from 'jquery'
 
 export default {
   name: 'home',
@@ -55,6 +56,7 @@ export default {
       if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
+      setTimeout(() => { $('#text-area').focus() }, 300);;
     },
 
     updateNote() {
