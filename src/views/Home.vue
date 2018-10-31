@@ -16,10 +16,10 @@
             </li>
           </ul>
         </div>
-        <div class="unallocated-space" @click="activeNote = undefined"></div>
+        <div class="unallocated-space" @click="removeSelection()"></div>
       </div>
       <div class="note">
-        <div class="create-new-note" v-if="activeNote == undefined">
+        <div class="create-new-note" v-if="activeNote == undefined" @click="newNote()">
           <img class="plus-icon" src="../assets/images/plus.png" alt="">
           <h4 class="create-new-text">Create New Note</h4>
         </div>
@@ -35,6 +35,7 @@
 import store from 'store'
 import uniqid from 'uniqid'
 import $ from 'jquery'
+import moment from 'moment'
 
 export default {
   name: 'home',
@@ -53,6 +54,11 @@ export default {
   
   methods: {
     showNote(note, index) {
+      if(this.note.text == '') {
+        this.notes.splice(this.activeNote, 1);
+        store.set('notes', this.notes);
+        this.note = this.notes[0]
+      }
       if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
@@ -62,6 +68,22 @@ export default {
     updateNote() {
       this.notes.splice(this.activeNote, 1, {id: this.note.id, text: this.note.text, date: this.note.date});
       store.set('notes', this.notes);
+    },
+
+    newNote() {
+      this.note = { date: Number(moment().format('x')), id: uniqid(), text: '' }
+      this.notes.unshift(this.note)
+      store.set('notes', this.notes);
+      this.activeNote = 0
+    },
+    
+    removeSelection() {
+      if(this.note.text == '') {
+        this.notes.splice(this.activeNote, 1);
+        store.set('notes', this.notes);
+        this.note = this.notes[0]
+      }
+      this.activeNote = undefined
     }
   },
 
