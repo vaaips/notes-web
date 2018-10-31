@@ -121,6 +121,7 @@ export default {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 margin-bottom: 2px;
+                text-transform: capitalize;
               }
 
               div {
