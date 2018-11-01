@@ -87,6 +87,10 @@ export default {
     },
 
     newNote() {
+      
+      // Remove all notes that have no text
+      this.notes = this.notes.filter(note => note.text !== '');
+
       var add = document.getElementById("add"); 
       add.play()
       this.note = { date: Number(moment().format('x')), id: uniqid(), text: '' }
