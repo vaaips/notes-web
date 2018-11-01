@@ -101,6 +101,8 @@ export default {
     },
     
     removeSelection() {
+      if(_.isEmpty(this.notes)) return
+      
       if(this.note.text == '') {
         this.notes.splice(this.activeNote, 1);
         store.set('notes', this.notes);
