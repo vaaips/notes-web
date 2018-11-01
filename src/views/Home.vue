@@ -4,6 +4,21 @@
       <h2 class="heading">Notes</h2>
     </div>
     <div class="main">
+
+      <!-- Add sound -->
+      <audio id="add">
+        <source src="../assets/sounds/add.ogg" type="audio/ogg">
+        <source src="../assets/sounds/add.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Delete sound -->
+      <audio id="delete">
+        <source src="../assets/sounds/delete.ogg" type="audio/ogg">
+        <source src="../assets/sounds/delete.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
       <div class="notes">
         <div class="notes-wrapper">
           <ul>
@@ -72,6 +87,8 @@ export default {
     },
 
     newNote() {
+      var add = document.getElementById("add"); 
+      add.play()
       this.note = { date: Number(moment().format('x')), id: uniqid(), text: '' }
       this.notes.unshift(this.note)
       store.set('notes', this.notes);
@@ -88,6 +105,8 @@ export default {
     },
 
     deleteNote() {
+      var trash = document.getElementById("delete"); 
+      trash.play()
       this.notes.splice(this.activeNote, 1);
       store.set('notes', this.notes);
       this.note = this.notes[0]
