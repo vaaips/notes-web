@@ -162,6 +162,7 @@ export default {
               div {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
 
                 .time {
                   font-size: 15px;
@@ -169,7 +170,6 @@ export default {
                 }
 
                 .trash {
-                  margin-left: 8px;
                   height: 15px;
                 }
               }
