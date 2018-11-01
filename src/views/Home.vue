@@ -78,7 +78,7 @@ export default {
       if(this.activeNote == index) return this.activeNote = undefined
       this.activeNote = index
       this.note = note
-      setTimeout(() => { $('#text-area').focus() }, 300);;
+      setTimeout(() => { $('#text-area').focus() }, 300);
     },
 
     updateNote() {
@@ -93,6 +93,7 @@ export default {
       this.notes.unshift(this.note)
       store.set('notes', this.notes);
       this.activeNote = 0
+      setTimeout(() => { $('#text-area').focus() }, 300);
     },
     
     removeSelection() {
