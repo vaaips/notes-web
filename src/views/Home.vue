@@ -151,7 +151,6 @@ export default {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                margin-bottom: 2px;
                 text-transform: capitalize;
               }
 
@@ -160,6 +159,7 @@ export default {
               }
 
               div {
+                margin-top: 2px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
