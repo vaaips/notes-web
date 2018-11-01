@@ -102,7 +102,7 @@ export default {
     
     removeSelection() {
       if(_.isEmpty(this.notes)) return
-      
+
       if(this.note.text == '') {
         this.notes.splice(this.activeNote, 1);
         store.set('notes', this.notes);
@@ -245,7 +245,11 @@ export default {
           }
         }
 
-        .effect { position: relative }
+        .effect {
+          position: relative;
+          z-index: 1;
+        }
+
         .effect:before, .effect:after {
           position: absolute;
           content: "";
@@ -256,6 +260,7 @@ export default {
           max-width:300px;
           box-shadow: 0 15px 10px #777;
           transform: rotate(-3deg);
+          z-index: -1;
         }
 
         .effect:after {
