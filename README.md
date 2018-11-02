@@ -4,7 +4,7 @@
 
 Notes is a simple and minimal note-taking web app. It's best for taking quick notes.
 
-###Screencast
+### Screencast
 
 [![Web Screencast](https://i.imgur.com/GLYJ9BR.png)](https://youtu.be/Louf8_JQsN8)
 
