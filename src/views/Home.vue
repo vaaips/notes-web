@@ -59,8 +59,9 @@ export default {
     return {
       notes: undefined,
       localNotes: [
-        {'id': uniqid(), 'date': 1540809560841, 'text': 'Hello wordl dfas dgttry tyyugvgf'},
-        {'id': uniqid(), 'date': 1540709560841, 'text': 'Hello world'}
+        {'id': uniqid(), 'date': Number(moment().format('x')), 'text': 'Welcomes to Notes. Keep Notes Simply.'},
+        {'id': uniqid(), 'date': Number(moment().format('x')), 'text': 'Click on plus icon to create new note.'},
+        {'id': uniqid(), 'date': Number(moment().format('x')), 'text': 'Click on trash icon to delete a note.'}
       ],
       note: '',
 
