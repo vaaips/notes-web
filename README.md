@@ -1,26 +1,19 @@
-# notes-web
+## Notes Web
 
-## Project setup
-```
-npm install
-```
+##### Keep Notes Simply
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Notes is a simple and minimal note-taking web app. It's best for taking quick notes.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+###Screencast
 
-### Run your tests
-```
-npm run test
-```
+[![Web Screencast](https://i.imgur.com/GLYJ9BR.png)](https://youtu.be/Louf8_JQsN8)
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Serve
+1. Clone Git repository
+`$ git clone https://github.com/vaaips/notes-web.git`
+2. Install dependencies
+`$ npm i`
+3. Compiles and hot-reloads for development
+`$ npm run serve`
+4. Compiles and minifies for production
+`$ npm run build`
